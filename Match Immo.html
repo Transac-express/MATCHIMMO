@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Match Immo — Agence immobilière Bordeaux & Médoc</title>
 <meta name="description" content="Agence Match Immo : maisons, appartements et terrains à vendre en Bordeaux et Médoc. L'agence qui fait le match entre vous et votre bien.">
-<link rel="canonical" href="https://matchimmo.fr/"> 
+<link rel="canonical" href="https://matchimmo.fr/">
 
+<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Match Immo — Bordeaux & Médoc">
 <meta property="og:description" content="Trouvez le bien qui vous correspond, en Bordeaux & Médoc. Maisons, appartements, terrains.">
@@ -14,19 +15,24 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:image" content="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200">
 
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Match Immo — Bordeaux & Médoc">
 <meta name="twitter:description" content="L'agence qui fait le match. Maisons, appartements, terrains.">
 
+<!-- Favicon SVG inline (badge double anneau vert/or, pin central) -->
 <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="29" fill="none" stroke="%232E6A3F" stroke-width="3"/><circle cx="32" cy="32" r="23" fill="none" stroke="%23C8882A" stroke-width="2"/><path d="M32 16c-5 0-9 4-9 9 0 7 9 17 9 17s9-10 9-17c0-5-4-9-9-9z" fill="%232E6A3F"/><circle cx="32" cy="25" r="3.5" fill="%23E8B84B"/></svg>'>
 
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+<!-- Swiper -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
+<!-- JSON-LD Organization (global) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -555,8 +561,12 @@ body.fiche-open{overflow:hidden;}
 </head>
 <body>
 
+<!-- ─────────────────────────────────────
+     SVG SYMBOLS (logo + icons)
+     ───────────────────────────────────── -->
 <svg width="0" height="0" style="position:absolute;" aria-hidden="true">
   <defs>
+    <!-- Wordmark: MATCH | IMMO with central pin -->
     <symbol id="logo-wordmark" viewBox="0 0 320 56">
       <text x="0" y="40" font-family="Playfair Display, serif" font-size="38" font-weight="600" fill="#2E6A3F" letter-spacing="2">MATCH</text>
       <g transform="translate(150,8)">
@@ -567,6 +577,7 @@ body.fiche-open{overflow:hidden;}
       <text x="180" y="40" font-family="Playfair Display, serif" font-size="38" font-weight="600" fill="#C8882A" letter-spacing="2">IMMO</text>
     </symbol>
 
+    <!-- Wordmark white version (navbar after scroll) -->
     <symbol id="logo-wordmark-white" viewBox="0 0 320 56">
       <text x="0" y="40" font-family="Playfair Display, serif" font-size="38" font-weight="600" fill="#FAFAF7" letter-spacing="2">MATCH</text>
       <g transform="translate(150,8)">
@@ -577,6 +588,7 @@ body.fiche-open{overflow:hidden;}
       <text x="180" y="40" font-family="Playfair Display, serif" font-size="38" font-weight="600" fill="#E8B84B" letter-spacing="2">IMMO</text>
     </symbol>
 
+    <!-- Badge (favicon-style) -->
     <symbol id="logo-badge" viewBox="0 0 64 64">
       <circle cx="32" cy="32" r="29" fill="none" stroke="#2E6A3F" stroke-width="2"/>
       <circle cx="32" cy="32" r="23" fill="none" stroke="#C8882A" stroke-width="1.5"/>
@@ -584,6 +596,7 @@ body.fiche-open{overflow:hidden;}
       <circle cx="32" cy="25" r="3.5" fill="#E8B84B"/>
     </symbol>
 
+    <!-- Icons -->
     <symbol id="i-surface" viewBox="0 0 24 24"><path d="M3 3h18v18H3z M3 3l18 18 M21 3L3 21" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
     <symbol id="i-rooms" viewBox="0 0 24 24"><path d="M3 21V11l9-7 9 7v10 M9 21v-7h6v7" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
     <symbol id="i-land" viewBox="0 0 24 24"><path d="M3 17l4-8 5 5 4-3 5 6 M3 21h18" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
@@ -597,6 +610,9 @@ body.fiche-open{overflow:hidden;}
   </defs>
 </svg>
 
+<!-- ─────────────────────────────────────
+     NAVBAR
+     ───────────────────────────────────── -->
 <nav class="nav" id="nav" aria-label="Navigation principale">
   <a href="#accueil" class="nav-logo" aria-label="Match Immo - Accueil">
     <img src="assets/matchimmo-logo-white.png" alt="Match Immo" style="height:40px;width:auto;display:block;">
@@ -611,6 +627,9 @@ body.fiche-open{overflow:hidden;}
   <button class="nav-burger" id="navBurger" aria-label="Ouvrir le menu">≡</button>
 </nav>
 
+<!-- ─────────────────────────────────────
+     SECTION 1 — HERO
+     ───────────────────────────────────── -->
 <header class="hero" id="accueil" role="banner">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
@@ -657,6 +676,9 @@ body.fiche-open{overflow:hidden;}
   </a>
 </header>
 
+<!-- ─────────────────────────────────────
+     SECTION 2 — ANNONCES
+     ───────────────────────────────────── -->
 <section class="section annonces" id="annonces" aria-labelledby="annonces-title">
   <div class="section-inner">
     <div class="section-head">
@@ -685,6 +707,9 @@ body.fiche-open{overflow:hidden;}
   </div>
 </section>
 
+<!-- ─────────────────────────────────────
+     SECTION 3 — FICHE BIEN (overlay)
+     ───────────────────────────────────── -->
 <aside class="fiche" id="fiche" aria-modal="true" role="dialog" aria-labelledby="ficheTitle">
   <button class="fiche-close" id="ficheClose" aria-label="Fermer la fiche du bien">
     <svg width="20" height="20"><use href="#i-close"/></svg>
@@ -724,6 +749,9 @@ body.fiche-open{overflow:hidden;}
   <script type="application/ld+json" id="ficheLD"></script>
 </aside>
 
+<!-- ─────────────────────────────────────
+     SECTION 4 — AGENCE
+     ───────────────────────────────────── -->
 <section class="section agence" id="agence" aria-labelledby="agence-title">
   <div class="section-inner">
     <div class="agence-intro">
@@ -773,6 +801,9 @@ body.fiche-open{overflow:hidden;}
   </div>
 </section>
 
+<!-- ─────────────────────────────────────
+     SECTION 5 — CONTACT
+     ───────────────────────────────────── -->
 <section class="section contact" id="contact" aria-labelledby="contact-title">
   <div class="section-inner">
     <span class="eyebrow">— Parlons de votre projet</span>
@@ -836,6 +867,7 @@ body.fiche-open{overflow:hidden;}
     </div>
   </div>
 
+  <!-- LocalBusiness Schema (in-section) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -851,6 +883,9 @@ body.fiche-open{overflow:hidden;}
   </script>
 </section>
 
+<!-- ─────────────────────────────────────
+     FOOTER
+     ───────────────────────────────────── -->
 <footer>
   <div class="foot-grid">
     <div class="foot-brand">
@@ -891,6 +926,9 @@ body.fiche-open{overflow:hidden;}
   </div>
 </footer>
 
+<!-- ─────────────────────────────────────
+     SCRIPTS — Data + routing + filters + animations
+     ───────────────────────────────────── -->
 <script>
 /* ============ DATA ============ */
 const PROPERTIES = [
