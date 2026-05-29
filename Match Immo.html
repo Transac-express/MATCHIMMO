@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Match Immo — Agence immobilière Bordeaux & Médoc</title>
+<meta name="description" content="Agence Match Immo : maisons, appartements et terrains à vendre en Bordeaux et Médoc. L'agence qui fait le match entre vous et votre bien.">
+<link rel="canonical" href="https://matchimmo.fr/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Match Immo — Bordeaux & Médoc">
+<meta property="og:description" content="Trouvez le bien qui vous correspond, en Bordeaux & Médoc. Maisons, appartements, terrains.">
+<meta property="og:url" content="https://matchimmo.fr/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Match Immo — Bordeaux & Médoc">
+<meta name="twitter:description" content="L'agence qui fait le match. Maisons, appartements, terrains.">
+
+<!-- Favicon SVG inline (badge double anneau vert/or, pin central) -->
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="29" fill="none" stroke="%232E6A3F" stroke-width="3"/><circle cx="32" cy="32" r="23" fill="none" stroke="%23C8882A" stroke-width="2"/><path d="M32 16c-5 0-9 4-9 9 0 7 9 17 9 17s9-10 9-17c0-5-4-9-9-9z" fill="%232E6A3F"/><circle cx="32" cy="25" r="3.5" fill="%23E8B84B"/></svg>'>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+<!-- JSON-LD Organization (global) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Match Immo",
+  "alternateName": "Matchimmo",
+  "description": "Agence immobilière spécialisée Bordeaux et Médoc.",
+  "url": "https://matchimmo.fr/",
+  "telephone": "+33 5 56 00 12 34",
+  "email": "contact@matchimmo.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "14 cours du Chapeau Rouge",
+    "addressLocality": "Bordeaux",
+    "postalCode": "33000",
+    "addressCountry": "FR"
+  },
+  "areaServed": ["Bordeaux", "Médoc", "Pauillac", "Margaux", "Listrac-Médoc", "Castelnau-de-Médoc"],
+  "logo": "https://matchimmo.fr/logo.svg"
+}
+</script>
+
+<style>
+/* ─────────────────────────────────────
+   PALETTE & TOKENS
+   ───────────────────────────────────── */
+:root{
+  --green-primary:#2E6A3F;
+  --green-deep:#1F4A2C;
+  --green-soft:#3F8053;
+  --gold-primary:#C8882A;
+  --gold-deep:#A06D1F;
+  --gold-light:#E8B84B;
+  --mint-accent:#A8D4B5;
+  --mint-soft:#D8EADD;
+  --bg-warm:#FAFAF7;
+  --bg-cream:#F2EFE6;
+  --text-dark:#1A1A1A;
+  --text-muted:#5A5A55;
+  --line:#E5E2D8;
+
+  --serif:"Playfair Display", Georgia, serif;
+  --sans:"DM Sans", system-ui, sans-serif;
+  --mono:"DM Mono", ui-monospace, monospace;
+
+  --pad: clamp(20px, 5vw, 88px);
+  --max: 1280px;
+  --radius: 2px;
+  --radius-card: 4px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--text-dark);
+  background:var(--bg-warm);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+:focus-visible{outline:2px solid var(--gold-primary);outline-offset:3px;}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.15;letter-spacing:-0.01em;margin:0;color:var(--text-dark);}
+h1{font-size:clamp(36px, 5.5vw, 68px);font-weight:500;}
+h2{font-size:clamp(30px, 4vw, 48px);font-weight:500;}
+h3{font-size:clamp(20px, 2vw, 26px);}
+.eyebrow{
+  font-family:var(--mono);font-size:12px;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--gold-primary);
+  display:inline-block;margin-bottom:18px;
+}
+.section{padding: clamp(64px, 9vw, 128px) var(--pad);}
+.section-inner{max-width:var(--max);margin:0 auto;}
+
+/* ─────────────────────────────────────
+   NAVBAR
+   ───────────────────────────────────── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px var(--pad);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+}
+.nav.scrolled{
+  background:var(--green-primary);
+  padding:12px var(--pad);
+  box-shadow:0 1px 0 rgba(0,0,0,0.05);
+}
+.nav-logo{display:flex;align-items:center;gap:10px;color:#fff;}
+.nav-logo img{height:40px;width:auto;transition:height 0.3s ease;}
+.nav.scrolled .nav-logo img{height:32px;}
+.nav-links{display:flex;align-items:center;gap:34px;}
+.nav-links a{
+  color:#fff;font-size:14px;font-weight:500;letter-spacing:0.02em;
+  position:relative;padding:6px 0;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:var(--gold-light);transform:scaleX(0);transform-origin:left;
+  transition:transform 0.3s ease;
+}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+.nav-cta{
+  background:var(--gold-primary);color:#fff;
+  padding:10px 18px;font-size:13px;font-weight:600;letter-spacing:0.04em;
+  text-transform:uppercase;border-radius:var(--radius);
+  transition:background 0.2s ease;
+}
+.nav-cta:hover{background:var(--gold-deep);}
+.nav-burger{display:none;color:#fff;font-size:24px;}
+
+@media(max-width:880px){
+  .nav-links{
+    position:fixed;top:64px;right:0;bottom:0;width:80%;max-width:340px;
+    flex-direction:column;align-items:flex-start;gap:0;
+    background:var(--green-primary);padding:30px;
+    transform:translateX(100%);transition:transform 0.3s ease;
+  }
+  .nav-links.open{transform:translateX(0);}
+  .nav-links a{padding:14px 0;width:100%;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .nav-links .nav-cta{margin-top:20px;}
+  .nav-burger{display:block;}
+}
+
+/* ─────────────────────────────────────
+   HERO
+   ───────────────────────────────────── */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:120px var(--pad) 80px;
+  color:#fff;text-align:center;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background-image:url("https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1920&q=80");
+  background-size:cover;background-position:center;
+}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg, rgba(31,74,44,0.62) 0%, rgba(31,74,44,0.55) 50%, rgba(31,74,44,0.78) 100%);
+}
+.hero-content{position:relative;z-index:2;max-width:1000px;width:100%;}
+.hero-logo{margin-bottom:48px;}
+.hero-logo img{height:clamp(72px,9vw,110px);width:auto;}
+.hero h1{
+  color:#fff;font-weight:400;font-style:italic;
+  margin-bottom:22px;
+  text-shadow:0 1px 30px rgba(0,0,0,0.2);
+}
+.hero h1 em{color:var(--gold-light);font-style:italic;font-weight:500;}
+.hero-sub{
+  font-size:clamp(15px, 1.4vw, 18px);
+  color:rgba(255,255,255,0.92);
+  max-width:600px;margin:0 auto 48px;
+  letter-spacing:0.01em;
+}
+
+.search-bar{
+  background:#fff;color:var(--text-dark);
+  border-radius:var(--radius);
+  display:grid;grid-template-columns: 1.1fr 1.3fr 1fr auto;
+  gap:0;align-items:stretch;
+  max-width:920px;margin:0 auto;
+  box-shadow:0 20px 60px rgba(0,0,0,0.25);
+  overflow:hidden;
+  text-align:left;
+}
+.search-field{
+  padding:18px 22px;display:flex;flex-direction:column;gap:4px;
+  border-right:1px solid var(--line);
+}
+.search-field label{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.16em;
+  text-transform:uppercase;color:var(--gold-primary);
+}
+.search-field select,.search-field input{
+  border:none;outline:none;font-family:var(--sans);font-size:15px;
+  font-weight:500;background:transparent;color:var(--text-dark);
+  padding:2px 0;width:100%;
+}
+.search-submit{
+  background:var(--green-primary);color:#fff;
+  padding:0 36px;font-size:14px;font-weight:600;letter-spacing:0.06em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px;
+  transition:background 0.2s ease, transform 0.1s ease;
+}
+.search-submit:hover{background:var(--green-deep);}
+.search-submit:active{transform:scale(0.97);}
+.search-submit.bounce{animation:bounce 0.4s ease;}
+@keyframes bounce{0%,100%{transform:scale(1);}30%{transform:scale(0.94);}60%{transform:scale(1.03);}}
+
+.scroll-indicator{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  z-index:2;color:rgba(255,255,255,0.7);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;
+  animation:fadeIn 1s 0.6s both;
+}
+.scroll-indicator svg{animation:pulse-down 2s ease-in-out infinite;}
+@keyframes pulse-down{
+  0%,100%{transform:translateY(0);opacity:0.7;}
+  50%{transform:translateY(6px);opacity:1;}
+}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+@media(max-width:880px){
+  .search-bar{grid-template-columns:1fr;}
+  .search-field{border-right:none;border-bottom:1px solid var(--line);}
+  .search-submit{padding:18px;justify-content:center;}
+}
+
+/* ─────────────────────────────────────
+   ANNONCES
+   ───────────────────────────────────── */
+.annonces{background:var(--bg-warm);}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:48px;}
+.section-head p{color:var(--text-muted);max-width:480px;margin:8px 0 0;}
+
+.filters{
+  position:sticky;top:78px;z-index:50;
+  background:var(--bg-warm);
+  padding:18px 0;margin-bottom:32px;
+  border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+}
+.filter-tabs{display:flex;gap:6px;flex-wrap:wrap;}
+.filter-tab{
+  padding:9px 18px;font-size:13px;font-weight:500;letter-spacing:0.02em;
+  color:var(--text-muted);border:1px solid var(--line);
+  background:#fff;border-radius:99px;
+  transition:all 0.2s ease;
+}
+.filter-tab:hover{border-color:var(--gold-primary);color:var(--text-dark);}
+.filter-tab.active{
+  background:var(--green-primary);color:#fff;border-color:var(--green-primary);
+}
+.filter-price{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:12px;color:var(--text-muted);}
+.filter-price input[type=range]{
+  -webkit-appearance:none;appearance:none;
+  width:200px;height:2px;background:var(--line);outline:none;
+}
+.filter-price input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;
+  width:16px;height:16px;border-radius:50%;background:var(--gold-primary);cursor:pointer;
+  border:2px solid #fff;box-shadow:0 0 0 1px var(--gold-primary);
+}
+.filter-price input[type=range]::-moz-range-thumb{
+  width:14px;height:14px;border-radius:50%;background:var(--gold-primary);cursor:pointer;border:2px solid #fff;
+}
+.price-value{color:var(--gold-primary);font-weight:500;}
+
+.grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:32px;
+}
+@media(max-width:1024px){.grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:680px){.grid{grid-template-columns:1fr;gap:24px;}}
+
+.card{
+  background:#fff;border-radius:var(--radius-card);overflow:hidden;
+  border:1px solid var(--line);border-left:3px solid transparent;
+  transition:transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor:pointer;display:flex;flex-direction:column;
+  opacity:0;transform:translateY(20px);
+}
+.card.in{opacity:1;transform:translateY(0);transition:opacity 0.7s ease, transform 0.7s ease, border-color 0.3s ease, box-shadow 0.3s ease;}
+.card:hover{transform:translateY(-4px);border-left-color:var(--gold-primary);box-shadow:0 18px 40px -20px rgba(31,74,44,0.25);}
+.card.hidden{display:none;}
+
+.card-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--bg-cream);}
+.card-media img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease;}
+.card:hover .card-media img{transform:scale(1.04);}
+.card-badge{
+  position:absolute;top:14px;left:14px;
+  background:rgba(250,250,247,0.95);color:var(--green-primary);
+  padding:5px 12px;font-family:var(--mono);font-size:10px;font-weight:500;
+  letter-spacing:0.14em;text-transform:uppercase;border-radius:99px;
+  backdrop-filter:blur(4px);
+}
+.card-fav{
+  position:absolute;top:14px;right:14px;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(250,250,247,0.95);color:var(--green-primary);
+  display:flex;align-items:center;justify-content:center;
+  transition:background 0.2s ease, color 0.2s ease;
+}
+.card-fav:hover{background:var(--gold-primary);color:#fff;}
+.card-seal{
+  position:absolute;bottom:14px;right:14px;z-index:3;
+  width:62px;height:62px;border-radius:50%;
+  background:rgba(250,250,247,0.96);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 18px -4px rgba(31,74,44,0.35), inset 0 0 0 1px rgba(200,136,42,0.18);
+  backdrop-filter:blur(6px);
+  transition:transform 0.4s ease;
+}
+.card-seal img{width:50px;height:50px;}
+.card:hover .card-seal{transform:rotate(-8deg) scale(1.06);}
+.card-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:14px;flex:1;}
+.card-loc{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);}
+.card-title{font-family:var(--serif);font-size:22px;line-height:1.2;color:var(--text-dark);}
+.card-meta{display:flex;gap:18px;color:var(--text-muted);font-size:13px;padding-top:14px;border-top:1px solid var(--line);}
+.card-meta span{display:flex;align-items:center;gap:6px;}
+.card-foot{display:flex;align-items:center;justify-content:space-between;padding-top:16px;margin-top:auto;}
+.card-price{font-family:var(--mono);font-size:20px;font-weight:500;color:var(--gold-primary);letter-spacing:-0.01em;}
+.card-link{font-size:13px;font-weight:600;color:var(--green-primary);display:flex;align-items:center;gap:6px;transition:gap 0.2s ease;}
+.card:hover .card-link{gap:12px;}
+
+/* ─────────────────────────────────────
+   FICHE BIEN (overlay/route)
+   ───────────────────────────────────── */
+.fiche{
+  display:none;
+  position:fixed;inset:0;z-index:200;
+  background:var(--bg-warm);
+  overflow-y:auto;
+}
+.fiche.open{display:block;}
+.fiche-close{
+  position:fixed;top:24px;right:24px;z-index:210;
+  width:48px;height:48px;border-radius:50%;
+  background:var(--text-dark);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(0,0,0,0.25);
+  transition:background 0.2s ease;
+}
+.fiche-close:hover{background:var(--green-primary);}
+.fiche-gallery{
+  width:100%;height:60vh;min-height:420px;background:var(--bg-cream);
+}
+.fiche-gallery .swiper{width:100%;height:100%;}
+.fiche-gallery .swiper-slide img{width:100%;height:100%;object-fit:cover;}
+.fiche-gallery .swiper-button-prev,.fiche-gallery .swiper-button-next{
+  color:#fff;background:rgba(0,0,0,0.35);width:48px;height:48px;border-radius:50%;backdrop-filter:blur(4px);
+}
+.fiche-gallery .swiper-button-prev::after,.fiche-gallery .swiper-button-next::after{font-size:18px;font-weight:700;}
+.fiche-gallery .swiper-pagination-bullet-active{background:var(--gold-light);}
+
+.fiche-body{
+  max-width:var(--max);margin:-80px auto 0;
+  background:var(--bg-warm);
+  padding:64px var(--pad) 96px;position:relative;z-index:5;
+  display:grid;grid-template-columns:1.6fr 1fr;gap:64px;
+}
+@media(max-width:960px){.fiche-body{grid-template-columns:1fr;gap:32px;margin-top:-40px;padding-top:48px;}}
+
+.fiche-main h1{font-size:clamp(32px,3.6vw,46px);margin-bottom:8px;}
+.fiche-loc{font-family:var(--mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-primary);margin-bottom:36px;display:flex;align-items:center;gap:10px;}
+.fiche-loc::before{content:"";width:24px;height:1px;background:var(--gold-primary);display:inline-block;}
+.fiche-desc{font-size:16px;line-height:1.75;color:var(--text-muted);margin-bottom:40px;}
+.fiche-features{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:28px 0;
+}
+@media(max-width:600px){.fiche-features{grid-template-columns:repeat(2,1fr);gap:24px 0;}}
+.feature{display:flex;flex-direction:column;gap:6px;padding:0 16px;border-right:1px solid var(--line);}
+.feature:last-child{border-right:none;}
+.feature-icon{color:var(--green-primary);}
+.feature-label{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);}
+.feature-value{font-family:var(--serif);font-size:22px;color:var(--text-dark);}
+
+.fiche-side{position:sticky;top:32px;align-self:start;}
+.fiche-card{
+  background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold-primary);
+  padding:32px;border-radius:var(--radius-card);
+  position:relative;
+}
+.fiche-seal{
+  position:absolute;top:-32px;right:-12px;
+  width:84px;height:84px;border-radius:50%;
+  background:var(--bg-warm);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px -6px rgba(31,74,44,0.3);
+  transform:rotate(8deg);
+}
+.fiche-seal img{width:72px;height:72px;}
+@media(max-width:960px){.fiche-seal{top:-28px;right:8px;width:72px;height:72px;}.fiche-seal img{width:62px;height:62px;}}
+.fiche-price{
+  font-family:var(--mono);font-size:32px;font-weight:500;color:var(--gold-primary);
+  letter-spacing:-0.01em;margin-bottom:6px;
+}
+.fiche-price-note{font-size:12px;color:var(--text-muted);margin-bottom:28px;font-family:var(--mono);}
+.fiche-agent{display:flex;gap:14px;align-items:center;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:24px;}
+.fiche-agent img{width:48px;height:48px;border-radius:50%;object-fit:cover;}
+.fiche-agent-name{font-weight:600;font-size:14px;color:var(--text-dark);}
+.fiche-agent-role{font-size:12px;color:var(--text-muted);font-family:var(--mono);letter-spacing:0.08em;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 22px;font-size:14px;font-weight:600;letter-spacing:0.04em;
+  text-transform:uppercase;border-radius:var(--radius);width:100%;
+  transition:all 0.2s ease;cursor:pointer;
+}
+.btn-primary{background:var(--green-primary);color:#fff;}
+.btn-primary:hover{background:var(--green-deep);}
+.btn-secondary{background:transparent;color:var(--gold-primary);border:1px solid var(--gold-primary);margin-top:10px;}
+.btn-secondary:hover{background:var(--gold-primary);color:#fff;}
+
+/* ─────────────────────────────────────
+   AGENCE
+   ───────────────────────────────────── */
+.agence{background:var(--bg-cream);}
+.agence-intro{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:end;margin-bottom:80px;}
+@media(max-width:880px){.agence-intro{grid-template-columns:1fr;gap:24px;}}
+.agence-intro p{color:var(--text-muted);font-size:17px;line-height:1.7;}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:80px;}
+@media(max-width:880px){.values{grid-template-columns:1fr;}}
+.value{
+  background:var(--bg-warm);padding:36px 32px;border-radius:var(--radius-card);
+  border-top:2px solid var(--mint-accent);
+}
+.value-num{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;color:var(--gold-primary);margin-bottom:14px;}
+.value h3{margin-bottom:14px;}
+.value p{color:var(--text-muted);font-size:14px;margin:0;}
+
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:48px;
+  padding:48px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  margin-bottom:64px;
+}
+@media(max-width:680px){.stats{grid-template-columns:1fr;gap:32px;text-align:center;}}
+.stat{display:flex;flex-direction:column;gap:8px;}
+.stat-num{font-family:var(--serif);font-size:clamp(48px,6vw,72px);font-weight:500;color:var(--green-primary);line-height:1;letter-spacing:-0.02em;}
+.stat-label{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-muted);}
+
+.team-photo{
+  width:100%;aspect-ratio:21/9;background:var(--bg-warm);overflow:hidden;border-radius:var(--radius-card);
+}
+.team-photo img{width:100%;height:100%;object-fit:cover;}
+
+/* ─────────────────────────────────────
+   CONTACT
+   ───────────────────────────────────── */
+.contact{background:var(--green-primary);color:#fff;}
+.contact .eyebrow{color:var(--gold-light);}
+.contact h2{color:#fff;font-style:italic;font-weight:400;}
+.contact h2 em{color:var(--gold-light);font-style:italic;font-weight:500;}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;margin-top:48px;}
+@media(max-width:880px){.contact-grid{grid-template-columns:1fr;gap:48px;}}
+
+.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.contact-form .full{grid-column:1/-1;}
+.form-field{display:flex;flex-direction:column;gap:6px;}
+.form-field label{font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);}
+.form-field input,.form-field select,.form-field textarea{
+  background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.3);
+  padding:10px 0;font-family:var(--sans);font-size:15px;color:#fff;
+  transition:border-color 0.2s ease;
+}
+.form-field textarea{min-height:100px;resize:vertical;}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:none;border-color:var(--gold-light);}
+.form-field select option{color:var(--text-dark);}
+.contact-form .btn{background:var(--gold-primary);color:#fff;}
+.contact-form .btn:hover{background:var(--gold-light);}
+
+.contact-info{display:flex;flex-direction:column;gap:28px;}
+.contact-info-block{
+  padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,0.15);
+}
+.contact-info-block:last-child{border-bottom:none;}
+.contact-info-label{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;}
+.contact-info-value{font-family:var(--serif);font-size:20px;color:#fff;line-height:1.4;}
+.contact-info-value a{transition:color 0.2s ease;}
+.contact-info-value a:hover{color:var(--gold-light);}
+
+.map-embed{
+  margin-top:48px;aspect-ratio:21/8;
+  background:linear-gradient(135deg, #2b5a36 0%, #1f4a2c 100%);
+  position:relative;border-radius:var(--radius-card);overflow:hidden;
+  border:1px solid rgba(255,255,255,0.1);
+}
+.map-embed::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(168,212,181,0.15) 1px,transparent 1px),
+    linear-gradient(90deg, rgba(168,212,181,0.15) 1px,transparent 1px);
+  background-size:48px 48px;
+}
+.map-pin{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-100%);
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+}
+.map-pin-dot{width:18px;height:18px;border-radius:50%;background:var(--gold-light);box-shadow:0 0 0 6px rgba(232,184,75,0.3),0 0 0 14px rgba(232,184,75,0.15);animation:pulse-pin 2s ease-in-out infinite;}
+@keyframes pulse-pin{0%,100%{box-shadow:0 0 0 6px rgba(232,184,75,0.3),0 0 0 14px rgba(232,184,75,0.15);}50%{box-shadow:0 0 0 10px rgba(232,184,75,0.2),0 0 0 24px rgba(232,184,75,0.08);}}
+.map-pin-label{
+  background:#fff;color:var(--green-primary);padding:6px 14px;
+  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+  border-radius:99px;margin-top:8px;
+}
+
+/* ─────────────────────────────────────
+   FOOTER
+   ───────────────────────────────────── */
+footer{background:var(--text-dark);color:rgba(255,255,255,0.7);padding:72px var(--pad) 32px;}
+.foot-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+@media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+@media(max-width:480px){.foot-grid{grid-template-columns:1fr;}}
+.foot-brand{display:flex;flex-direction:column;gap:18px;}
+.foot-brand svg{height:36px;width:auto;}
+.foot-brand p{margin:0;font-size:14px;color:rgba(255,255,255,0.55);max-width:280px;}
+.foot-col h4{color:#fff;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:18px;}
+.foot-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+.foot-col a{font-size:14px;color:rgba(255,255,255,0.6);transition:color 0.2s ease;}
+.foot-col a:hover{color:var(--gold-light);}
+.foot-bottom{
+  max-width:var(--max);margin:0 auto;
+  padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:12px;color:rgba(255,255,255,0.4);font-family:var(--mono);letter-spacing:0.08em;
+}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.8s ease, transform 0.8s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* Body lock when fiche open */
+body.fiche-open{overflow:hidden;}
+</style>
+</head>
+<body>
+
+<!-- ─────────────────────────────────────
+     SVG SYMBOLS (logo + icons)
+     ───────────────────────────────────── -->
+<svg width="0" height="0" style="position:absolute;" aria-hidden="true">
+  <defs>
+    <!-- Wordmark: MATCH | IMMO with central pin -->
+    <symbol id="logo-wordmark" viewBox="0 0 320 56">
+      <text x="0" y="40" font-family="Playfair Display, serif" font-size="38" font-weight="600" fill="#2E6A3F" letter-spacing="2">MATCH</text>
+      <g transform="translate(150,8)">
+        <path d="M8 0 C3 0 0 4 0 9 C0 18 8 32 8 32 C8 32 16 18 16 9 C16 4 13 0 8 0 Z" fill="#C8882A"/>
+        <circle cx="8" cy="9" r="3" fill="#E8B84B"/>
+        <path d="M8 34 L8 44" stroke="#C8882A" stroke-width="1.5"/>
+      </g>
+      <text x="180" y="40" font-family="Playfair Display, serif" font-size="38" font-weight="600" fill="#C8882A" letter-spacing="2">IMMO</text>
+    </symbol>
+
+    <!-- Wordmark white version (navbar after scroll) -->
+    <symbol id="logo-wordmark-white" viewBox="0 0 320 56">
+      <text x="0" y="40" font-family="Playfair Display, serif" font-size="38" font-weight="600" fill="#FAFAF7" letter-spacing="2">MATCH</text>
+      <g transform="translate(150,8)">
+        <path d="M8 0 C3 0 0 4 0 9 C0 18 8 32 8 32 C8 32 16 18 16 9 C16 4 13 0 8 0 Z" fill="#E8B84B"/>
+        <circle cx="8" cy="9" r="3" fill="#FAFAF7"/>
+        <path d="M8 34 L8 44" stroke="#E8B84B" stroke-width="1.5"/>
+      </g>
+      <text x="180" y="40" font-family="Playfair Display, serif" font-size="38" font-weight="600" fill="#E8B84B" letter-spacing="2">IMMO</text>
+    </symbol>
+
+    <!-- Badge (favicon-style) -->
+    <symbol id="logo-badge" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="29" fill="none" stroke="#2E6A3F" stroke-width="2"/>
+      <circle cx="32" cy="32" r="23" fill="none" stroke="#C8882A" stroke-width="1.5"/>
+      <path d="M32 16c-5 0-9 4-9 9 0 7 9 17 9 17s9-10 9-17c0-5-4-9-9-9z" fill="#2E6A3F"/>
+      <circle cx="32" cy="25" r="3.5" fill="#E8B84B"/>
+    </symbol>
+
+    <!-- Icons -->
+    <symbol id="i-surface" viewBox="0 0 24 24"><path d="M3 3h18v18H3z M3 3l18 18 M21 3L3 21" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-rooms" viewBox="0 0 24 24"><path d="M3 21V11l9-7 9 7v10 M9 21v-7h6v7" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-land" viewBox="0 0 24 24"><path d="M3 17l4-8 5 5 4-3 5 6 M3 21h18" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-dpe" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s8-7.5 8-13a8 8 0 10-16 0c0 5.5 8 13 8 13z M12 9a3 3 0 100 6 3 3 0 000-6z" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-chev-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14 M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12 M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.5-4.5" stroke="currentColor" stroke-width="1.8"/></symbol>
+  </defs>
+</svg>
+
+<!-- ─────────────────────────────────────
+     NAVBAR
+     ───────────────────────────────────── -->
+<nav class="nav" id="nav" aria-label="Navigation principale">
+  <a href="#accueil" class="nav-logo" aria-label="Match Immo - Accueil">
+    <img src="assets/matchimmo-logo-white.png" alt="Match Immo" style="height:40px;width:auto;display:block;">
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#accueil" class="nav-link">Accueil</a>
+    <a href="#annonces" class="nav-link">Annonces</a>
+    <a href="#agence" class="nav-link">L'agence</a>
+    <a href="#contact" class="nav-link">Contact</a>
+    <a href="#contact" class="nav-cta">Prendre RDV</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Ouvrir le menu">≡</button>
+</nav>
+
+<!-- ─────────────────────────────────────
+     SECTION 1 — HERO
+     ───────────────────────────────────── -->
+<header class="hero" id="accueil" role="banner">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-logo" aria-label="Match Immo">
+      <img src="assets/matchimmo-logo-white.png" alt="Match Immo — Agence immobilière Bordeaux & Médoc" style="height:96px;width:auto;display:inline-block;">
+    </div>
+    <h1>Trouvez le bien qui<br>vous <em>correspond</em>, en Bordeaux &amp; Médoc</h1>
+    <p class="hero-sub">Maisons, appartements, terrains — L'agence qui fait le match entre vous et votre futur chez-vous.</p>
+
+    <form class="search-bar" id="searchForm" role="search" aria-label="Recherche de bien">
+      <div class="search-field">
+        <label for="f-type">Type de bien</label>
+        <select id="f-type" name="type">
+          <option value="all">Tous les biens</option>
+          <option value="maison">Maison</option>
+          <option value="appartement">Appartement</option>
+          <option value="terrain">Terrain</option>
+        </select>
+      </div>
+      <div class="search-field">
+        <label for="f-city">Ville / Quartier</label>
+        <input id="f-city" name="city" type="text" placeholder="Bordeaux, Pauillac, Margaux…" autocomplete="off">
+      </div>
+      <div class="search-field">
+        <label for="f-budget">Budget maximum</label>
+        <select id="f-budget" name="budget">
+          <option value="2000000">Sans limite</option>
+          <option value="200000">jusqu'à 200 000 €</option>
+          <option value="400000">jusqu'à 400 000 €</option>
+          <option value="600000">jusqu'à 600 000 €</option>
+          <option value="1000000">jusqu'à 1 000 000 €</option>
+        </select>
+      </div>
+      <button type="submit" class="search-submit" id="searchSubmit">
+        <svg width="16" height="16"><use href="#i-search"/></svg>
+        Rechercher
+      </button>
+    </form>
+  </div>
+  <a href="#annonces" class="scroll-indicator" aria-label="Voir les annonces">
+    <span>Découvrir</span>
+    <svg width="20" height="20"><use href="#i-chev-down"/></svg>
+  </a>
+</header>
+
+<!-- ─────────────────────────────────────
+     SECTION 2 — ANNONCES
+     ───────────────────────────────────── -->
+<section class="section annonces" id="annonces" aria-labelledby="annonces-title">
+  <div class="section-inner">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">— Sélection courante</span>
+        <h2 id="annonces-title">Nos biens disponibles</h2>
+        <p>Chaque bien est visité, vérifié et photographié par nos soins. <span id="resultCount">6</span> annonces actives.</p>
+      </div>
+    </div>
+
+    <div class="filters">
+      <div class="filter-tabs" role="tablist">
+        <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">Tous</button>
+        <button class="filter-tab" data-filter="maison" role="tab">Maison</button>
+        <button class="filter-tab" data-filter="appartement" role="tab">Appartement</button>
+        <button class="filter-tab" data-filter="terrain" role="tab">Terrain</button>
+      </div>
+      <div class="filter-price">
+        <span>Budget max</span>
+        <input type="range" id="priceSlider" min="100000" max="1500000" step="50000" value="1500000" aria-label="Budget maximum">
+        <span class="price-value" id="priceValue">1 500 000 €</span>
+      </div>
+    </div>
+
+    <div class="grid" id="grid" role="list"></div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     SECTION 3 — FICHE BIEN (overlay)
+     ───────────────────────────────────── -->
+<aside class="fiche" id="fiche" aria-modal="true" role="dialog" aria-labelledby="ficheTitle">
+  <button class="fiche-close" id="ficheClose" aria-label="Fermer la fiche du bien">
+    <svg width="20" height="20"><use href="#i-close"/></svg>
+  </button>
+  <div class="fiche-gallery">
+    <div class="swiper" id="ficheSwiper">
+      <div class="swiper-wrapper" id="ficheSlides"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  <div class="fiche-body">
+    <div class="fiche-main">
+      <h1 id="ficheTitle">—</h1>
+      <div class="fiche-loc" id="ficheLoc">—</div>
+      <p class="fiche-desc" id="ficheDesc">—</p>
+      <div class="fiche-features" id="ficheFeatures"></div>
+    </div>
+    <div class="fiche-side">
+      <div class="fiche-card">
+        <div class="fiche-seal" aria-hidden="true"><img src="assets/matchimmo-badge.png" alt=""></div>
+        <div class="fiche-price" id="fichePrice">—</div>
+        <div class="fiche-price-note">Honoraires charge vendeur</div>
+        <div class="fiche-agent">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=120&q=80" alt="Portrait de Claire Vermeil, conseillère Match Immo">
+          <div>
+            <div class="fiche-agent-name" id="ficheAgent">Claire Vermeil</div>
+            <div class="fiche-agent-role">Conseillère Médoc</div>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-primary" id="ficheRdv">Prendre rendez-vous</a>
+        <a href="#contact" class="btn btn-secondary">Envoyer un message</a>
+      </div>
+    </div>
+  </div>
+  <script type="application/ld+json" id="ficheLD"></script>
+</aside>
+
+<!-- ─────────────────────────────────────
+     SECTION 4 — AGENCE
+     ───────────────────────────────────── -->
+<section class="section agence" id="agence" aria-labelledby="agence-title">
+  <div class="section-inner">
+    <div class="agence-intro">
+      <div>
+        <span class="eyebrow">— L'agence</span>
+        <h2 id="agence-title">Match Immo,<br>l'agence qui fait<br>la différence.</h2>
+      </div>
+      <p>Implantés en plein cœur de Bordeaux, nous accompagnons depuis 2018 les familles, primo-accédants et investisseurs dans leurs projets sur l'ensemble du vignoble bordelais et du Médoc. Notre conviction : chaque bien a sa famille — notre métier, c'est de faire le match.</p>
+    </div>
+
+    <div class="values">
+      <article class="value reveal">
+        <div class="value-num">01 — Proximité</div>
+        <h3>Une équipe locale, sur le terrain.</h3>
+        <p>Trois conseillers à temps plein qui connaissent chaque village, chaque appellation, chaque rue de quartier. Pas de standard, pas d'algorithme : votre interlocuteur reste le même du premier appel à la remise des clés.</p>
+      </article>
+      <article class="value reveal">
+        <div class="value-num">02 — Expertise locale</div>
+        <h3>Le marché Bordeaux-Médoc dans le détail.</h3>
+        <p>Estimations calibrées au quartier, analyse fine des DPE et des servitudes viticoles, négociation construite sur la donnée. Nous travaillons aussi avec un réseau de notaires et d'artisans de confiance.</p>
+      </article>
+      <article class="value reveal">
+        <div class="value-num">03 — Transparence</div>
+        <h3>Honoraires lisibles, sans surprise.</h3>
+        <p>Notre grille tarifaire est publique, nos mandats sont clairs, nos délais sont annoncés. Vous savez à chaque étape où en est votre dossier et ce qu'il reste à faire.</p>
+      </article>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat">
+        <div class="stat-num" data-count="120" data-suffix="+">0</div>
+        <div class="stat-label">Biens vendus depuis 2018</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="8" data-suffix=" ans">0</div>
+        <div class="stat-label">D'expertise sur le secteur</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" style="font-size:clamp(28px,3.5vw,40px);line-height:1.1;">Bordeaux<br><em style="color:var(--gold-primary);font-style:italic;">&amp; Médoc</em></div>
+        <div class="stat-label">Notre terrain de jeu</div>
+      </div>
+    </div>
+
+    <div class="team-photo reveal">
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&q=80" alt="Équipe Match Immo réunie dans les locaux bordelais — trois conseillers en discussion" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     SECTION 5 — CONTACT
+     ───────────────────────────────────── -->
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <div class="section-inner">
+    <span class="eyebrow">— Parlons de votre projet</span>
+    <h2 id="contact-title">Une question, un projet ?<br><em>Écrivez-nous.</em></h2>
+
+    <div class="contact-grid">
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-field">
+          <label for="c-name">Nom</label>
+          <input id="c-name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="c-email">Email</label>
+          <input id="c-email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="c-phone">Téléphone</label>
+          <input id="c-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="form-field">
+          <label for="c-project">Type de projet</label>
+          <select id="c-project" name="project">
+            <option value="achat">Achat</option>
+            <option value="vente">Vente / Estimation</option>
+            <option value="terrain">Terrain / Construction</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="form-field full">
+          <label for="c-message">Votre message</label>
+          <textarea id="c-message" name="message" rows="4" placeholder="Décrivez votre recherche, vos contraintes, votre calendrier…"></textarea>
+        </div>
+        <button type="submit" class="btn full" id="contactSubmit">Envoyer le message</button>
+      </form>
+
+      <div class="contact-info">
+        <div class="contact-info-block">
+          <div class="contact-info-label">— Bureau</div>
+          <div class="contact-info-value">14 cours du Chapeau Rouge<br>33000 Bordeaux</div>
+        </div>
+        <div class="contact-info-block">
+          <div class="contact-info-label">— Téléphone</div>
+          <div class="contact-info-value"><a href="tel:+33556001234">05 56 00 12 34</a></div>
+        </div>
+        <div class="contact-info-block">
+          <div class="contact-info-label">— Email</div>
+          <div class="contact-info-value"><a href="mailto:contact@matchimmo.fr">contact@matchimmo.fr</a></div>
+        </div>
+        <div class="contact-info-block">
+          <div class="contact-info-label">— Horaires</div>
+          <div class="contact-info-value" style="font-size:15px;font-family:var(--sans);color:rgba(255,255,255,0.85);">Lun–Ven · 9h30 — 19h<br>Sam · 10h — 17h · sur rdv</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-embed" role="img" aria-label="Carte de localisation : 14 cours du Chapeau Rouge, Bordeaux">
+      <div class="map-pin">
+        <div class="map-pin-dot"></div>
+        <div class="map-pin-label">Match Immo · Bordeaux</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LocalBusiness Schema (in-section) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Match Immo",
+    "image":"https://matchimmo.fr/og.jpg",
+    "address":{"@type":"PostalAddress","streetAddress":"14 cours du Chapeau Rouge","addressLocality":"Bordeaux","postalCode":"33000","addressCountry":"FR"},
+    "telephone":"+33556001234",
+    "email":"contact@matchimmo.fr",
+    "openingHours":["Mo-Fr 09:30-19:00","Sa 10:00-17:00"],
+    "geo":{"@type":"GeoCoordinates","latitude":44.8412,"longitude":-0.5760}
+  }
+  </script>
+</section>
+
+<!-- ─────────────────────────────────────
+     FOOTER
+     ───────────────────────────────────── -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img src="assets/matchimmo-logo-white.png" alt="Match Immo" style="height:48px;width:auto;display:block;">
+      <p>Agence immobilière indépendante. Bordeaux &amp; Médoc, depuis 2018.</p>
+    </div>
+    <nav class="foot-col" aria-label="Plan du site">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#annonces">Annonces</a></li>
+        <li><a href="#agence">L'agence</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <nav class="foot-col" aria-label="Catégories de biens">
+      <h4>Nos biens</h4>
+      <ul>
+        <li><a href="#annonces" data-jump-filter="maison">Maisons</a></li>
+        <li><a href="#annonces" data-jump-filter="appartement">Appartements</a></li>
+        <li><a href="#annonces" data-jump-filter="terrain">Terrains</a></li>
+        <li><a href="#contact">Estimation gratuite</a></li>
+      </ul>
+    </nav>
+    <div class="foot-col">
+      <h4>Mentions</h4>
+      <ul>
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="#">RGPD</a></li>
+        <li><a href="#">Honoraires</a></li>
+        <li><a href="#">Carte T n° 33-2018-04567</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 MATCH IMMO — Tous droits réservés</span>
+    <span>SARL au capital de 10 000 € · RCS Bordeaux 842 156 789</span>
+  </div>
+</footer>
+
+<!-- ─────────────────────────────────────
+     SCRIPTS — Data + routing + filters + animations
+     ───────────────────────────────────── -->
+<script>
+/* ============ DATA ============ */
+const PROPERTIES = [
+  {
+    id:"maison-pauillac",
+    type:"maison",
+    title:"Bastide en pierre, jardin clos",
+    city:"Pauillac",
+    region:"Médoc",
+    price:685000,
+    surface:185,
+    rooms:6,
+    land:1200,
+    dpe:"C",
+    desc:"Élégante bastide médocaine du XIXᵉ siècle entièrement restaurée, à dix minutes des grands crus de Pauillac. Volumes généreux, cheminées d'origine, parquets en chêne. Le jardin clos de murs offre une véritable parenthèse, avec verger ancien et terrasse plein sud. Cinq chambres dont une suite parentale au rez-de-chaussée. Cave voûtée, double garage. Idéal résidence principale ou maison de famille.",
+    images:[
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&q=80"
+    ],
+    agent:"Claire Vermeil"
+  },
+  {
+    id:"appartement-chartrons",
+    type:"appartement",
+    title:"3 pièces lumineux, parquet d'origine",
+    city:"Bordeaux Chartrons",
+    region:"Bordeaux",
+    price:445000,
+    surface:78,
+    rooms:3,
+    land:0,
+    dpe:"D",
+    desc:"Au cœur du quartier mythique des Chartrons, appartement traversant au 2ᵉ étage d'un immeuble en pierre du XVIIIᵉ. Hauteurs sous plafond exceptionnelles, parquet point de Hongrie, deux belles cheminées en marbre. Salon double exposé sud sur cour calme, cuisine ouverte récente, deux chambres. Cave et possibilité parking en location.",
+    images:[
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1600&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1600&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1600&q=80"
+    ],
+    agent:"Théo Lassalle"
+  },
+  {
+    id:"maison-castelnau",
+    type:"maison",
+    title:"Maison de plain-pied, piscine",
+    city:"Castelnau-de-Médoc",
+    region:"Médoc",
+    price:389000,
+    surface:142,
+    rooms:5,
+    land:850,
+    dpe:"B",
+    desc:"Construction récente (2019) sur un terrain paysager de 850 m². Plain-pied lumineux organisé autour d'une pièce de vie de 55 m² ouverte sur la terrasse et la piscine chauffée. Quatre chambres, dont une suite parentale avec dressing. Cuisine équipée haut de gamme, garage motorisé, panneaux photovoltaïques. Aucun travaux à prévoir.",
+    images:[
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1600&q=80"
+    ],
+    agent:"Claire Vermeil"
+  },
+  {
+    id:"appartement-bacalan",
+    type:"appartement",
+    title:"T4 neuf, terrasse vue Garonne",
+    city:"Bordeaux Bacalan",
+    region:"Bordeaux",
+    price:529000,
+    surface:96,
+    rooms:4,
+    land:0,
+    dpe:"A",
+    desc:"Dernier étage d'une résidence livrée en 2023, à deux pas de la Cité du Vin. Quatre pièces traversantes prolongées par une terrasse de 22 m² avec vue dégagée sur la Garonne et les Bassins à Flot. Trois chambres, bureau, cuisine ouverte. Standing : ascenseur, parking privatif en sous-sol, garantie décennale.",
+    images:[
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1600&q=80",
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1600&q=80",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80"
+    ],
+    agent:"Théo Lassalle"
+  },
+  {
+    id:"terrain-listrac",
+    type:"terrain",
+    title:"Terrain constructible, vue dégagée",
+    city:"Listrac-Médoc",
+    region:"Médoc",
+    price:148000,
+    surface:0,
+    rooms:0,
+    land:1450,
+    dpe:"—",
+    desc:"Terrain plat de 1 450 m², viabilisé (eau, électricité, tout-à-l'égout en bordure), entièrement constructible en zone UB du PLU. Orientation sud-ouest, exposition exceptionnelle sur les vignobles. Pas de vis-à-vis. Coefficient d'emprise au sol 30%. Idéal projet maison familiale ou contemporaine d'architecte.",
+    images:[
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80"
+    ],
+    agent:"Margot Delfau"
+  },
+  {
+    id:"terrain-margaux",
+    type:"terrain",
+    title:"Parcelle boisée, lisière de vignes",
+    city:"Margaux",
+    region:"Médoc",
+    price:215000,
+    surface:0,
+    rooms:0,
+    land:2100,
+    dpe:"—",
+    desc:"Belle parcelle de 2 100 m², partiellement boisée (chênes centenaires) en lisière des appellations de Margaux. Zone constructible UC, raccordements en limite. Idéal maison contemporaine sur sous-sol ou projet d'architecte. Calme absolu, à 5 minutes du village.",
+    images:[
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80",
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80",
+      "https://images.unsplash.com/photo-1505765050516-f72dcac9c60f?w=1600&q=80"
+    ],
+    agent:"Margot Delfau"
+  }
+];
+
+const TYPE_LABELS = {
+  maison:"Maison", appartement:"Appartement", terrain:"Terrain"
+};
+
+const fmtEur = n => n.toLocaleString("fr-FR") + " €";
+
+/* ============ RENDER CARDS ============ */
+function renderCards(){
+  const grid = document.getElementById("grid");
+  grid.innerHTML = PROPERTIES.map(p => `
+    <article class="card" data-type="${p.type}" data-price="${p.price}" data-id="${p.id}" role="listitem">
+      <div class="card-media">
+        <img src="${p.images[0]}" alt="${TYPE_LABELS[p.type]} ${p.rooms?p.rooms+' pièces ':''}à vendre à ${p.city} — Match Immo" loading="lazy">
+        <span class="card-badge">${TYPE_LABELS[p.type]}</span>
+        <button class="card-fav" aria-label="Ajouter aux favoris" onclick="event.stopPropagation();this.classList.toggle('active');">
+          <svg width="16" height="16"><use href="#i-heart"/></svg>
+        </button>
+        <div class="card-seal" aria-hidden="true">
+          <img src="assets/matchimmo-badge.png" alt="">
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-loc">${p.region} · ${p.city}</div>
+        <div class="card-title">${p.title}</div>
+        <div class="card-meta">
+          ${p.surface?`<span><svg width="14" height="14"><use href="#i-surface"/></svg>${p.surface} m²</span>`:""}
+          ${p.rooms?`<span><svg width="14" height="14"><use href="#i-rooms"/></svg>${p.rooms} pièces</span>`:""}
+          ${p.land?`<span><svg width="14" height="14"><use href="#i-land"/></svg>${p.land} m² terrain</span>`:""}
+        </div>
+        <div class="card-foot">
+          <div class="card-price">${fmtEur(p.price)}</div>
+          <span class="card-link">Voir le bien <svg width="14" height="14"><use href="#i-arrow"/></svg></span>
+        </div>
+      </div>
+    </article>
+  `).join("");
+  // Click handler
+  grid.querySelectorAll(".card").forEach(c => {
+    c.addEventListener("click", () => {
+      location.hash = "bien-" + c.dataset.id;
+    });
+  });
+  // Reveal
+  observeReveal(grid.querySelectorAll(".card"));
+}
+
+/* ============ FILTERS ============ */
+let currentFilter = "all";
+let currentMaxPrice = 1500000;
+
+function applyFilters(){
+  const cards = document.querySelectorAll(".card");
+  let count = 0;
+  cards.forEach(c => {
+    const typeOk = currentFilter === "all" || c.dataset.type === currentFilter;
+    const priceOk = parseInt(c.dataset.price) <= currentMaxPrice;
+    const show = typeOk && priceOk;
+    c.classList.toggle("hidden", !show);
+    if(show) count++;
+  });
+  document.getElementById("resultCount").textContent = count;
+  // Update SEO title for filtered view
+  updateSEO(currentFilter);
+}
+
+function bindFilters(){
+  document.querySelectorAll(".filter-tab").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".filter-tab").forEach(b => {b.classList.remove("active");b.setAttribute("aria-selected","false");});
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected","true");
+      currentFilter = btn.dataset.filter;
+      applyFilters();
+    });
+  });
+  const slider = document.getElementById("priceSlider");
+  const val = document.getElementById("priceValue");
+  slider.addEventListener("input", () => {
+    currentMaxPrice = parseInt(slider.value);
+    val.textContent = currentMaxPrice.toLocaleString("fr-FR") + " €";
+    applyFilters();
+  });
+
+  // Footer jump-filter links
+  document.querySelectorAll("[data-jump-filter]").forEach(a => {
+    a.addEventListener("click", () => {
+      const f = a.dataset.jumpFilter;
+      setTimeout(() => {
+        const btn = document.querySelector(`.filter-tab[data-filter="${f}"]`);
+        if(btn) btn.click();
+      }, 100);
+    });
+  });
+}
+
+/* ============ HERO SEARCH ============ */
+function bindSearch(){
+  const form = document.getElementById("searchForm");
+  const btn = document.getElementById("searchSubmit");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    btn.classList.remove("bounce");void btn.offsetWidth;btn.classList.add("bounce");
+    const type = document.getElementById("f-type").value;
+    const budget = parseInt(document.getElementById("f-budget").value);
+    currentFilter = type;
+    currentMaxPrice = budget;
+    // Reflect in UI
+    document.querySelectorAll(".filter-tab").forEach(b => {
+      b.classList.toggle("active", b.dataset.filter === type);
+    });
+    const slider = document.getElementById("priceSlider");
+    slider.value = Math.min(budget, parseInt(slider.max));
+    document.getElementById("priceValue").textContent = slider.value*1 + " €";
+    document.getElementById("priceValue").textContent = parseInt(slider.value).toLocaleString("fr-FR") + " €";
+    applyFilters();
+    setTimeout(() => { location.hash = "annonces"; }, 200);
+  });
+}
+
+/* ============ FICHE BIEN ============ */
+let swiperInstance = null;
+
+function openFiche(id){
+  const p = PROPERTIES.find(x => x.id === id);
+  if(!p) return;
+  document.getElementById("ficheTitle").textContent = p.title;
+  document.getElementById("ficheLoc").textContent = `${p.region} · ${p.city}`;
+  document.getElementById("ficheDesc").textContent = p.desc;
+  document.getElementById("fichePrice").textContent = fmtEur(p.price);
+  document.getElementById("ficheAgent").textContent = p.agent;
+
+  // Features
+  const feats = [];
+  if(p.surface) feats.push({icon:"i-surface",label:"Surface",val:p.surface+" m²"});
+  if(p.rooms) feats.push({icon:"i-rooms",label:"Pièces",val:p.rooms});
+  if(p.land) feats.push({icon:"i-land",label:"Terrain",val:p.land+" m²"});
+  feats.push({icon:"i-dpe",label:"DPE",val:p.dpe});
+  document.getElementById("ficheFeatures").innerHTML = feats.map(f => `
+    <div class="feature">
+      <div class="feature-icon"><svg width="22" height="22"><use href="#${f.icon}"/></svg></div>
+      <div class="feature-label">${f.label}</div>
+      <div class="feature-value">${f.val}</div>
+    </div>
+  `).join("");
+
+  // Slides
+  document.getElementById("ficheSlides").innerHTML = p.images.map((src,i) => `
+    <div class="swiper-slide">
+      <img src="${src}" alt="${TYPE_LABELS[p.type]} à ${p.city}, photo ${i+1} — Match Immo" loading="lazy">
+    </div>
+  `).join("");
+
+  // Swiper init
+  if(swiperInstance) swiperInstance.destroy(true,true);
+  if(window.Swiper){
+    swiperInstance = new Swiper("#ficheSwiper", {
+      loop:true,
+      navigation:{nextEl:".fiche-gallery .swiper-button-next",prevEl:".fiche-gallery .swiper-button-prev"},
+      pagination:{el:".fiche-gallery .swiper-pagination",clickable:true}
+    });
+  }
+
+  // JSON-LD
+  document.getElementById("ficheLD").textContent = JSON.stringify({
+    "@context":"https://schema.org",
+    "@type":"RealEstateListing",
+    "name":p.title,
+    "description":p.desc,
+    "url":"https://matchimmo.fr/#bien-"+p.id,
+    "image":p.images,
+    "offers":{"@type":"Offer","price":p.price,"priceCurrency":"EUR","availability":"https://schema.org/InStock"},
+    "address":{"@type":"PostalAddress","addressLocality":p.city,"addressRegion":p.region,"addressCountry":"FR"},
+    ...(p.surface ? {"floorSize":{"@type":"QuantitativeValue","value":p.surface,"unitCode":"MTK"}} : {}),
+    ...(p.rooms ? {"numberOfRooms":p.rooms} : {}),
+    ...(p.land ? {"lotSize":{"@type":"QuantitativeValue","value":p.land,"unitCode":"MTK"}} : {})
+  });
+
+  document.getElementById("fiche").classList.add("open");
+  document.body.classList.add("fiche-open");
+
+  // SEO
+  document.title = `${p.title} — ${p.city} | Match Immo`;
+  setMeta("description", `${p.title} à ${p.city}. ${p.surface?p.surface+' m², ':''}${p.rooms?p.rooms+' pièces, ':''}${fmtEur(p.price)}. Découvrez ce bien avec Match Immo.`.substring(0,155));
+}
+
+function closeFiche(){
+  document.getElementById("fiche").classList.remove("open");
+  document.body.classList.remove("fiche-open");
+  if(swiperInstance){swiperInstance.destroy(true,true);swiperInstance=null;}
+}
+
+document.getElementById("ficheClose").addEventListener("click", () => {
+  history.replaceState(null,"","#annonces");
+  closeFiche();
+});
+
+document.addEventListener("keydown",(e)=>{if(e.key==="Escape")closeFiche();});
+
+/* ============ SEO ROUTING ============ */
+const SEO = {
+  accueil:{title:"Match Immo — Agence immobilière Bordeaux & Médoc", desc:"Maisons, appartements et terrains à vendre en Bordeaux et Médoc. L'agence qui fait le match entre vous et votre bien."},
+  annonces:{title:"Biens à vendre Bordeaux & Médoc | Match Immo", desc:"Découvrez notre sélection de maisons, appartements et terrains à vendre à Bordeaux, Pauillac, Margaux et alentours."},
+  maison:{title:"Maisons à vendre Bordeaux & Médoc | Match Immo", desc:"Maisons à vendre dans le Médoc et Bordeaux. Bastides, contemporaines, plain-pied avec piscine — sélection vérifiée."},
+  appartement:{title:"Appartements à vendre Bordeaux | Match Immo", desc:"Appartements à vendre à Bordeaux (Chartrons, Bacalan…). Standing, lumière, charme de l'ancien ou neuf."},
+  terrain:{title:"Terrains à vendre Médoc | Match Immo", desc:"Terrains constructibles à vendre dans le Médoc. Listrac, Margaux et autres communes — viabilisés, vue dégagée."},
+  agence:{title:"L'agence Match Immo — Bordeaux & Médoc", desc:"Match Immo : 8 ans d'expertise locale, 120+ biens vendus. Proximité, expertise, transparence. Trois conseillers à votre service."},
+  contact:{title:"Contact — Match Immo, Bordeaux", desc:"Contactez Match Immo : 14 cours du Chapeau Rouge, Bordeaux. Téléphone, email, formulaire — réponse sous 24h."}
+};
+function setMeta(name, content){
+  let el = document.querySelector(`meta[name="${name}"]`);
+  if(!el){el=document.createElement("meta");el.name=name;document.head.appendChild(el);}
+  el.content = content;
+}
+function updateSEO(key){
+  const s = SEO[key] || SEO.accueil;
+  document.title = s.title;
+  setMeta("description", s.desc);
+}
+
+function handleHash(){
+  const h = location.hash.replace("#","");
+  if(h.startsWith("bien-")){
+    openFiche(h.replace("bien-",""));
+    return;
+  } else {
+    closeFiche();
+  }
+  // Section in nav
+  const sectionKey = h || "accueil";
+  document.querySelectorAll(".nav-link").forEach(a => {
+    a.classList.toggle("active", a.getAttribute("href") === "#"+sectionKey);
+  });
+  if(SEO[sectionKey]) updateSEO(sectionKey);
+}
+window.addEventListener("hashchange", handleHash);
+
+/* ============ NAV SCROLL ============ */
+const nav = document.getElementById("nav");
+function onScroll(){
+  if(window.scrollY > 60) nav.classList.add("scrolled");
+  else nav.classList.remove("scrolled");
+}
+window.addEventListener("scroll", onScroll, {passive:true});
+onScroll();
+
+/* Burger */
+document.getElementById("navBurger").addEventListener("click", () => {
+  document.getElementById("navLinks").classList.toggle("open");
+});
+document.querySelectorAll(".nav-links a").forEach(a => {
+  a.addEventListener("click", () => document.getElementById("navLinks").classList.remove("open"));
+});
+
+/* ============ REVEAL + COUNTERS ============ */
+function observeReveal(nodes){
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add("in");
+        // Counters
+        if(e.target.classList.contains("stats")){
+          e.target.querySelectorAll("[data-count]").forEach(animateCount);
+        }
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.15});
+  nodes.forEach(n => io.observe(n));
+}
+function animateCount(el){
+  const target = parseInt(el.dataset.count);
+  const suffix = el.dataset.suffix || "";
+  const dur = 1400;
+  const start = performance.now();
+  function tick(now){
+    const t = Math.min(1,(now-start)/dur);
+    const eased = 1-Math.pow(1-t,3);
+    el.textContent = Math.round(target*eased) + suffix;
+    if(t<1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+/* ============ CONTACT FORM ============ */
+document.getElementById("contactForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const btn = document.getElementById("contactSubmit");
+  const orig = btn.textContent;
+  btn.textContent = "Message envoyé ✓";
+  btn.style.background = "var(--mint-accent)";
+  btn.style.color = "var(--green-deep)";
+  setTimeout(() => {
+    btn.textContent = orig;
+    btn.style.background = "";
+    btn.style.color = "";
+    e.target.reset();
+  }, 2600);
+});
+
+/* ============ INIT ============ */
+renderCards();
+bindFilters();
+bindSearch();
+observeReveal(document.querySelectorAll(".reveal"));
+handleHash();
+</script>
+</body>
+</html>
